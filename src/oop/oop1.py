@@ -26,7 +26,7 @@ class Vehicle:
     def __str__(self):
         return f"The vehicle is {self.name}"
 
-
+#Base for GroundVehicle is Vehicle
 class GroundVehicle(Vehicle):
     def __init__(self, name, brand):
         super().__init__(name)
@@ -35,7 +35,7 @@ class GroundVehicle(Vehicle):
     def __str__(self):
         return super().__str__() + f" and it is a {self.brand}."
 
-
+#Base for Car is GroundVehicle
 class Car(GroundVehicle):
     def __init__(self, name, brand, model):
         super().__init__(name, brand)
@@ -44,7 +44,7 @@ class Car(GroundVehicle):
     def __str__(self):
         return super().__str__() + f" The model of this car is {self.model}"
 
-
+#Base for Motorcycle is GroundVehicle
 class Motorcycle(GroundVehicle):
     def __init__(self, name, brand, model):
         super().__init__(name, brand)
@@ -53,7 +53,7 @@ class Motorcycle(GroundVehicle):
     def __str__(self):
         return super().__str__() + f" The model of this motorcycle is {self.model}"
 
-
+#Base for FlightVehicle is Vehicle
 class FlightVehicle(Vehicle):
     def __init__(self, name, type):
         super().__init__(name)
@@ -61,7 +61,8 @@ class FlightVehicle(Vehicle):
 
     def __str__(self):
         return super().__str__() + f" and it is an {self.type}"
-    
+ 
+ #Base for Airplane is FlightVehicle   
 class Airplane(FlightVehicle):
     def __init__(self, name, type, model):
         super().__init__(name, type)
@@ -70,6 +71,8 @@ class Airplane(FlightVehicle):
     def __str__(self):
         return super().__str__() + f" The model of this plane is {self.model}"
     
+    
+ #Base for Starship is FlightVehicle   
 class Starship(FlightVehicle):
     def __init__(self, name, type, model):
         super().__init__(name, type)
