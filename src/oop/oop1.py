@@ -33,7 +33,7 @@ class GroundVehicle(Vehicle):
         self.brand = brand
 
     def __str__(self):
-        return super().__str__() + f" and it's brand is {self.brand}."
+        return super().__str__() + f" and it is a {self.brand}."
     
 class Car(GroundVehicle):
     def __init__(self, name, brand, model ):
@@ -42,12 +42,24 @@ class Car(GroundVehicle):
         
     def __str__(self):
         return super().__str__() + f" The model of this car is {self.model}"
+    
+class Motorcycle(GroundVehicle):
+    def __init__(self, name, brand, model):
+        super().__init__(name,brand)
+        self.model=model
+        
+    def __str__(self):
+        return super().__str__() + f" The model of this motorcycle is {self.model}"
+        
+        
         
 
 
-vehicle = Vehicle("speed car")
-groundVehicle = GroundVehicle("speed car", "Toyota")
-car= Car("speed car", "Toyota", "Sequoia")
+vehicle = Vehicle("ground vehicle")
+groundVehicle = GroundVehicle("ground vehicle","speed car" )
+car= Car("ground vehicle","speed car", "Toyota")
+motorcycle=Motorcycle("ground vehicle","motorcycle", "power bike")
 print(vehicle)
 print(groundVehicle)
 print(car)
+print(motorcycle)
